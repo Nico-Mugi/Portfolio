@@ -1,0 +1,1 @@
+export { JobObjective } from './JobObjective';

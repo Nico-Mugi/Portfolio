@@ -1,9 +1,16 @@
 import React from 'react';
+import { Introduction } from './Introduction';
+import { Resume } from './Resume';
+import { Skills } from './Skills';
+import { Projects } from './Projects';
 
 export const Page = () => {
   return (
     <>
-      <h2>Lol</h2>
+      <Introduction />
+      <Resume />
+      <Skills />
+      <Projects />
     </>
   );
 };
