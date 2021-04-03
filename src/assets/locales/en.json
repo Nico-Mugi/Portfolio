@@ -1,3 +1,15 @@
 {
-    "Welcome to React": "English tmtc"
+    "englishFrench": "Français",
+    "Introduction": "About me",
+    "Job objective": "Job objective",
+    "Personal interests": "Personal interests",
+    "Resume": "Resume",
+    "Experiences": "Experiences",
+    "Education & qualifications": "Education & Qualifications",
+    "Skills": "Skills",
+    "Technical skills": "Technical skills",
+    "Languages": "Languages",
+    "Projects": "Projects",
+    "Personal skills": "Personal skills",
+    "Contact": "Contact"
 }

@@ -1,32 +1,28 @@
 import i18n from 'i18next';
 import I18nextBrowserLanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
-
 import translationEN from '../assets/locales/en.json';
 import translationFR from '../assets/locales/fr.json';
 
-export const initi18next = () => {
+export const init = () => {
   i18n
     .use(I18nextBrowserLanguageDetector)
     .use(initReactI18next)
     .init({
       lng: navigator.language,
-      fallbackLng: 'en',
+      fallbackLng: 'fr-FR',
       ns: ['portfolio'],
       defaultNS: 'portfolio',
       resources: {
         en: {
-          translation: translationEN,
+          portfolio: translationEN,
         },
         fr: {
-          translation: translationFR,
+          portfolio: translationFR,
         },
       },
-
-      keySeparator: false, // we do not use keys in form messages.welcome
-
       interpolation: {
-        escapeValue: false, // react already safes from xss
+        escapeValue: false,
       },
     });
 };

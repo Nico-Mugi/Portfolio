@@ -1,9 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const PersonalInterests = () => {
+  const { t } = useTranslation('portfolio');
   return (
     <>
-      <h3>Personal Interests</h3>
+      <h3>{t('Personal interests')}</h3>
     </>
   );
 };

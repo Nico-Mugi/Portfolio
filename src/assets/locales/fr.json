@@ -1,3 +1,15 @@
 {
-    "Welcome to React": "Oui"
+    "englishFrench": "English",
+    "Introduction": "À propos",
+    "Job objective": "Projet professionnel",
+    "Personal interests": "Loisirs",
+    "Resume": "Résumé",
+    "Experiences": "Expériences",
+    "Education & qualifications": "Formation",
+    "Skills": "Compétences",
+    "Technical skills": "Compétences techniques",
+    "Languages": "Langues",
+    "Projects": "Projets",
+    "Personal skills": "Compétences personnelles",
+    "Contact": "Contact"
 }

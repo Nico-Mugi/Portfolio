@@ -1,14 +1,15 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Education } from './Education';
 import { Experiences } from './Experiences';
 
 export const Resume = () => {
+  const { t } = useTranslation('portfolio');
   return (
     <>
-      <h2>Resume</h2>
+      <h2>{t('Resume')}</h2>
       <Experiences />
       <Education />
-      <a>Download CV (créer un module Button)</a>
     </>
   );
 };
