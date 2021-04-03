@@ -5,6 +5,7 @@ export const Personal = () => {
   const { t } = useTranslation('portfolio');
   return (
     <>
+      <a className="anchor" id="personalSkills"></a>
       <h3>{t('Personal skills')}</h3>
     </>
   );

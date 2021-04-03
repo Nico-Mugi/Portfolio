@@ -6,9 +6,8 @@ export const Education = () => {
   const { t } = useTranslation('portfolio');
   return (
     <>
-      <h3 id="education" style={{ background: '#fff' }}>
-        {t('Education & qualifications')}
-      </h3>
+      <a className="anchor" id="education"></a>
+      <h3 style={{ background: '#fff' }}>{t('Education & qualifications')}</h3>
       <Timeline>
         <Timeline.Item>Create a services site 2015-09-01</Timeline.Item>
         <Timeline.Item>Solve initial network problems 2015-09-01</Timeline.Item>

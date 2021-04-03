@@ -29,7 +29,7 @@ interface Props {
 export const MyMenu = ({ darkState, setMenuSize }: Props) => {
   const { t } = useTranslation('portfolio');
   const [openKeys, setOpenKeys] = useState(['sub1']);
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
 
   const [menuState, setMenuState] = useState('1');
 
@@ -46,6 +46,22 @@ export const MyMenu = ({ darkState, setMenuSize }: Props) => {
   const onCollapse = () => {
     setMenuSize(collapsed ? menuWidth[1] : menuWidth[0]);
     setCollapsed(!collapsed);
+  };
+
+  const onTitleClick = () => {
+    setMenuState('');
+  };
+
+  const onContactClick = () => {
+    onTitleClick();
+    window.location.replace('/#footer');
+  };
+
+  const onTitleMouseEnter = (key: any) => {
+    if (!collapsed) {
+      onTitleClick();
+      onOpenChange([key]);
+    }
   };
 
   return (
@@ -69,49 +85,72 @@ export const MyMenu = ({ darkState, setMenuSize }: Props) => {
           <SubMenu
             key="sub1"
             icon={<IconFont type="icon-home" />}
-            title={t('Introduction')}>
+            title={t('Introduction')}
+            onTitleClick={onTitleClick}
+            onTitleMouseEnter={() => onTitleMouseEnter('sub1')}>
             <Menu.Item
               key="1"
               icon={<IconFont type="icon-Darts1" />}
               onClick={() => window.location.replace('/#jobObjective')}>
               {t('Job objective')}
             </Menu.Item>
-            <Menu.Item key="2" icon={<IconFont type="icon-Basket-Ball" />}>
+            <Menu.Item
+              key="2"
+              icon={<IconFont type="icon-Basket-Ball" />}
+              onClick={() => window.location.replace('/#personalInterests')}>
               {t('Personal interests')}
             </Menu.Item>
           </SubMenu>
           <SubMenu
             key="sub2"
             icon={<IconFont type="icon-paper" />}
-            title={t('Resume')}>
+            title={t('Resume')}
+            onTitleClick={onTitleClick}
+            onTitleMouseEnter={() => onTitleMouseEnter('sub2')}>
             <Menu.Item
               key="3"
               icon={<IconFont type="icon-gongzuojingyan" />}
               onClick={() => window.location.replace('/#experiences')}>
               {t('Experiences')}
             </Menu.Item>
-            <Menu.Item key="4" icon={<IconFont type="icon-jiaoyujingli" />}>
+            <Menu.Item
+              key="4"
+              icon={<IconFont type="icon-jiaoyujingli" />}
+              onClick={() => window.location.replace('/#education')}>
               {t('Education & qualifications')}
             </Menu.Item>
           </SubMenu>
           <SubMenu
             key="sub3"
             icon={<IconFont type="icon-chart" />}
-            title={t('Skills')}>
-            <Menu.Item key="5" icon={<IconFont type="icon-Programming" />}>
+            title={t('Skills')}
+            onTitleClick={onTitleClick}
+            onTitleMouseEnter={() => onTitleMouseEnter('sub3')}>
+            <Menu.Item
+              key="5"
+              icon={<IconFont type="icon-Programming" />}
+              onClick={() => window.location.replace('/#technicalSkills')}>
               {t('Technical skills')}
             </Menu.Item>
-            <Menu.Item key="6" icon={<IconFont type="icon-language-solid" />}>
+            <Menu.Item
+              key="6"
+              icon={<IconFont type="icon-language-solid" />}
+              onClick={() => window.location.replace('/#languages')}>
               {t('Languages')}
             </Menu.Item>
-            <Menu.Item key="7" icon={<IconFont type="icon-human-handsup" />}>
+            <Menu.Item
+              key="7"
+              icon={<IconFont type="icon-human-handsup" />}
+              onClick={() => window.location.replace('/#personalSkills')}>
               {t('Personal skills')}
             </Menu.Item>
           </SubMenu>
           <SubMenu
             key="sub4"
             icon={<IconFont type="icon-xiangmujingyan" />}
-            title={t('Projects')}>
+            title={t('Projects')}
+            onTitleClick={onTitleClick}
+            onTitleMouseEnter={() => onTitleMouseEnter('sub4')}>
             <Menu.Item key="8" icon={<IconFont type="icon-dot-net" />}>
               .NET
             </Menu.Item>
@@ -121,8 +160,17 @@ export const MyMenu = ({ darkState, setMenuSize }: Props) => {
             <Menu.Item key="10" icon={<IconFont type="icon-React" />}>
               React
             </Menu.Item>
+            <Menu.Item
+              key="11"
+              icon={<IconFont type="icon-React" />}
+              danger={true}>
+              Click a bomb
+            </Menu.Item>
           </SubMenu>
-          <Menu.Item key="sub5" icon={<MailOutlined />}>
+          <Menu.Item
+            key="sub5"
+            icon={<MailOutlined />}
+            onClick={onContactClick}>
             {t('Contact')}
           </Menu.Item>
         </Menu>
